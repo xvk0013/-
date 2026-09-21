@@ -1,0 +1,27 @@
+{
+  "backbone_dims": [
+    32,
+    64,
+    128,
+    256
+  ],
+  "backbone_blocks": [
+    1,
+    1,
+    4,
+    2
+  ],
+  "query_dim": 192,
+  "query_num_heads": 4,
+  "query_dropout": 0.2,
+  "query_attn_dropout": 0.1,
+  "demon_encoder_dims": [
+    32,
+    64,
+    128
+  ],
+  "demon_feat_dim": 128,
+  "tf_time_kernel": 31,
+  "tf_freq_kernel": 11,
+  "tf_expand_ratio": 4
+}

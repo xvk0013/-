@@ -1,0 +1,74 @@
+{
+  "name": "m2_tf_v11_single_v7_s42_bncal_v1",
+  "source": "M2_TF_V11_CR0_CE/model.py + backbone.py + m2_components.py",
+  "source_configuration": "M2_TF_V11_CR0_CE/config.py architecture defaults; copied unmodified model files",
+  "model_structure": {
+    "backbone_dims": [
+      32,
+      64,
+      128,
+      256
+    ],
+    "backbone_blocks": [
+      1,
+      1,
+      4,
+      2
+    ],
+    "query_dim": 192,
+    "query_num_heads": 4,
+    "query_dropout": 0.2,
+    "query_attn_dropout": 0.1,
+    "demon_encoder_dims": [
+      32,
+      64,
+      128
+    ],
+    "demon_feat_dim": 128,
+    "tf_time_kernel": 31,
+    "tf_freq_kernel": 11,
+    "tf_expand_ratio": 4
+  },
+  "head": "original V11 192-D Query + 128-D DEMON; original shared evidence scorer",
+  "single_adaptation": "count/pair heads retained and frozen; bypassed in single forward",
+  "initialization": "fresh original TF initialization, seed42; no historical weights",
+  "new_training_runs": 1,
+  "epochs": 60,
+  "seed": 42,
+  "batch_size": 32,
+  "ships_per_class_per_epoch": 1800,
+  "noise_per_epoch": 1080,
+  "optimizer_steps_per_epoch": 203,
+  "optimizer_steps_total": 12180,
+  "loss": "BCE + 0.2 ship CE; SupCon/CR/query orthogonality disabled",
+  "sampler": "unchanged channel-baseline SourcePoolSampler, not cross-recording batch rearrangement",
+  "augmentation": {
+    "name": "v7_two_bellhop_views_v1",
+    "split": "Train",
+    "alternate_probability": 0.5,
+    "channel_assignment_seed": 17042,
+    "views_per_source": 2,
+    "alternate_geometry": "uniform among the other 38 original range-depth combinations",
+    "source": "original normalized 8-second input context, NOT propagated WAV",
+    "evaluation": "unchanged original Bellhop Train and Val; no augmentation",
+    "test_loaded": false
+  },
+  "normalization": "saved V7 Bellhop Train frontend statistics",
+  "selection": "highest EMA Val single EMR; independent three-logit 0.5 threshold",
+  "bn_policy": {
+    "name": "ema_train_only_bn_v1",
+    "split": "Train",
+    "ships_per_class": 128,
+    "noise": 77,
+    "samples": 461,
+    "selection_seed": 27043,
+    "batch_size": 32,
+    "source": "original Train waves, saved frontend statistics",
+    "augmentation": false,
+    "gradient_updates": false,
+    "when": "before every EMA Val evaluation; saved with EMA checkpoint"
+  },
+  "comparison_scope": "V11 TF + Query versus Mamba + GAP and full V6 TF + Query; not a backbone-only comparison",
+  "new_data_generation": false,
+  "test_loaded": false
+}

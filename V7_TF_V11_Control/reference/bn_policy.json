@@ -1,0 +1,13 @@
+{
+  "name": "ema_train_only_bn_v1",
+  "split": "Train",
+  "ships_per_class": 128,
+  "noise": 77,
+  "samples": 461,
+  "selection_seed": 27043,
+  "batch_size": 32,
+  "source": "original Train waves, saved frontend statistics",
+  "augmentation": false,
+  "gradient_updates": false,
+  "when": "before every EMA Val evaluation; saved with EMA checkpoint"
+}

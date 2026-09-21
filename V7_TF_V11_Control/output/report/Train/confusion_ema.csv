@@ -1,0 +1,5 @@
+﻿truth / prediction,noise,Tanker,Cargo,Tug,Tanker+Cargo,Tanker+Tug,Cargo+Tug,Tanker+Cargo+Tug
+noise,3424,0,0,0,0,0,0,0
+Tanker,89,5270,636,26,127,6,0,0
+Cargo,57,396,4670,46,99,0,37,0
+Tug,33,27,40,5533,2,5,19,0
