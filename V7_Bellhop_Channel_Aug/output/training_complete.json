@@ -1,0 +1,29 @@
+{
+  "name": "v7_bellhop_two_views_s42",
+  "new_training_runs": 1,
+  "initialization": "fresh original Mamba seed42; no checkpoint initialization",
+  "normalization": "unchanged original Bellhop Train feature statistics",
+  "seed": 42,
+  "epochs": 60,
+  "batch_size": 32,
+  "ships_per_class_per_epoch": 1800,
+  "noise_per_epoch": 1080,
+  "optimizer_steps_per_epoch": 203,
+  "optimizer_steps_total": 12180,
+  "selection": "best EMA Val single_emr; independent sigmoid threshold 0.5",
+  "loss": "original BCE + 0.2 ship CE; no distillation or consistency term",
+  "augmentation": {
+    "name": "v7_two_bellhop_views_v1",
+    "split": "Train",
+    "alternate_probability": 0.5,
+    "channel_assignment_seed": 17042,
+    "views_per_source": 2,
+    "alternate_geometry": "uniform among the other 38 original range-depth combinations",
+    "source": "original normalized 8-second input context, NOT propagated WAV",
+    "evaluation": "unchanged original Bellhop Train and Val; no augmentation",
+    "test_loaded": false
+  },
+  "inference_parameters": 2090723,
+  "post_training_evaluation": "original full Train and Val; alternate views NOT evaluated",
+  "test_loaded": false
+}

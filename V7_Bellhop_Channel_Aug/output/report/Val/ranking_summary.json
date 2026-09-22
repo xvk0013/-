@@ -1,0 +1,169 @@
+{
+  "scene_level": {
+    "all_ships": {
+      "n": 3668,
+      "categories": {
+        "wrong_single_class": 1053,
+        "exact_correct": 2512,
+        "rejected_top1_wrong": 56,
+        "rejected_top1_correct": 30,
+        "multiple_top1_wrong": 15,
+        "multiple_top1_correct": 2
+      },
+      "formal_exact_accuracy": 0.6848418756815703,
+      "ship_only_top1_accuracy_diagnostic": 0.693565976008724,
+      "top1_correct_but_formal_wrong": 32,
+      "top1_wrong_or_tied": 1124
+    },
+    "Tanker": {
+      "n": 1318,
+      "categories": {
+        "wrong_single_class": 263,
+        "exact_correct": 1033,
+        "rejected_top1_wrong": 13,
+        "rejected_top1_correct": 5,
+        "multiple_top1_wrong": 2,
+        "multiple_top1_correct": 2
+      },
+      "formal_exact_accuracy": 0.783763277693475,
+      "ship_only_top1_accuracy_diagnostic": 0.7890743550834598,
+      "top1_correct_but_formal_wrong": 7,
+      "top1_wrong_or_tied": 278
+    },
+    "Cargo": {
+      "n": 1137,
+      "categories": {
+        "wrong_single_class": 449,
+        "exact_correct": 645,
+        "rejected_top1_correct": 16,
+        "multiple_top1_wrong": 7,
+        "rejected_top1_wrong": 20
+      },
+      "formal_exact_accuracy": 0.5672823218997362,
+      "ship_only_top1_accuracy_diagnostic": 0.5813544415127528,
+      "top1_correct_but_formal_wrong": 16,
+      "top1_wrong_or_tied": 476
+    },
+    "Tug": {
+      "n": 1213,
+      "categories": {
+        "wrong_single_class": 341,
+        "exact_correct": 834,
+        "rejected_top1_wrong": 23,
+        "rejected_top1_correct": 9,
+        "multiple_top1_wrong": 6
+      },
+      "formal_exact_accuracy": 0.6875515251442704,
+      "ship_only_top1_accuracy_diagnostic": 0.6949711459192086,
+      "top1_correct_but_formal_wrong": 9,
+      "top1_wrong_or_tied": 370
+    },
+    "noise": {
+      "n": 734,
+      "categories": {
+        "noise_correct": 734
+      },
+      "formal_exact_accuracy": 1.0,
+      "max_ship_probability_quantiles": {
+        "0.5": 0.00011213451216463,
+        "0.9": 0.0005214744596742094,
+        "0.99": 0.0022478888276964426,
+        "1.0": 0.008718527853488922
+      }
+    }
+  },
+  "unique_source_level": {
+    "all_ships": {
+      "n": 3668,
+      "categories": {
+        "wrong_single_class": 1053,
+        "exact_correct": 2512,
+        "rejected_top1_wrong": 56,
+        "rejected_top1_correct": 30,
+        "multiple_top1_wrong": 15,
+        "multiple_top1_correct": 2
+      },
+      "formal_exact_accuracy": 0.6848418756815703,
+      "ship_only_top1_accuracy_diagnostic": 0.693565976008724,
+      "top1_correct_but_formal_wrong": 32,
+      "top1_wrong_or_tied": 1124
+    },
+    "Tanker": {
+      "n": 1318,
+      "categories": {
+        "wrong_single_class": 263,
+        "exact_correct": 1033,
+        "rejected_top1_wrong": 13,
+        "rejected_top1_correct": 5,
+        "multiple_top1_wrong": 2,
+        "multiple_top1_correct": 2
+      },
+      "formal_exact_accuracy": 0.783763277693475,
+      "ship_only_top1_accuracy_diagnostic": 0.7890743550834598,
+      "top1_correct_but_formal_wrong": 7,
+      "top1_wrong_or_tied": 278
+    },
+    "Cargo": {
+      "n": 1137,
+      "categories": {
+        "wrong_single_class": 449,
+        "exact_correct": 645,
+        "rejected_top1_correct": 16,
+        "multiple_top1_wrong": 7,
+        "rejected_top1_wrong": 20
+      },
+      "formal_exact_accuracy": 0.5672823218997362,
+      "ship_only_top1_accuracy_diagnostic": 0.5813544415127528,
+      "top1_correct_but_formal_wrong": 16,
+      "top1_wrong_or_tied": 476
+    },
+    "Tug": {
+      "n": 1213,
+      "categories": {
+        "wrong_single_class": 341,
+        "exact_correct": 834,
+        "rejected_top1_wrong": 23,
+        "rejected_top1_correct": 9,
+        "multiple_top1_wrong": 6
+      },
+      "formal_exact_accuracy": 0.6875515251442704,
+      "ship_only_top1_accuracy_diagnostic": 0.6949711459192086,
+      "top1_correct_but_formal_wrong": 9,
+      "top1_wrong_or_tied": 370
+    },
+    "noise": {
+      "n": 734,
+      "categories": {
+        "noise_correct": 734
+      },
+      "formal_exact_accuracy": 1.0,
+      "max_ship_probability_quantiles": {
+        "0.5": 0.00011213451216463,
+        "0.9": 0.0005214744596742094,
+        "0.99": 0.0022478888276964426,
+        "1.0": 0.008718527853488922
+      }
+    }
+  },
+  "recording_equal_weight": {
+    "Tanker": {
+      "n_recordings": 36,
+      "exact_accuracy": 0.7496126543773347,
+      "ship_only_top1_accuracy": 0.7632737558432039
+    },
+    "Cargo": {
+      "n_recordings": 16,
+      "exact_accuracy": 0.5776808291560745,
+      "ship_only_top1_accuracy": 0.5913202185343879
+    },
+    "Tug": {
+      "n_recordings": 11,
+      "exact_accuracy": 0.7819481973948418,
+      "ship_only_top1_accuracy": 0.7892282052657589
+    },
+    "class_macro": {
+      "exact_accuracy": 0.703080560309417,
+      "ship_only_top1_accuracy": 0.7146073932144503
+    }
+  }
+}

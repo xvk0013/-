@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+set -euo pipefail
+cd -- "$(dirname -- "${BASH_SOURCE[0]}")"
+resume_args=()
+if [[ -f "runs/single_pool_C_time_spread_ship5_noise1_s42/last.pt" ]]; then
+  resume_args=(--resume "runs/single_pool_C_time_spread_ship5_noise1_s42/last.pt")
+fi
+python train_source_pool.py "${resume_args[@]}" --phase single \
+  --data-dir "/mnt/d/LSJ/Data/deepship_source_pool_ab/20260916_225548_748/C_time_spread" \
+  --noise-data-dir "/mnt/d/LSJ/Data/data_gen_v6_no_noise/20260916_225548_748/dataset" \
+  --output-dir runs/single_pool_C_time_spread_ship5_noise1_s42 \
+  --device cuda --scan-backend cuda --batch-size 32 --workers 4 --seed 42 --epochs 60
+python export_val_predictions.py --checkpoint runs/single_pool_C_time_spread_ship5_noise1_s42/best.pt \
+  --data-dir "/mnt/d/LSJ/Data/deepship_source_pool_ab/20260916_225548_748/C_time_spread" --device cuda --workers 4
+python summarize_source_pool.py --run-dir runs/single_pool_C_time_spread_ship5_noise1_s42 --data-dir "/mnt/d/LSJ/Data/deepship_source_pool_ab/20260916_225548_748/C_time_spread"
+python report_review_candidates.py --run-dir runs/single_pool_C_time_spread_ship5_noise1_s42

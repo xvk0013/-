@@ -1,0 +1,15 @@
+{
+  "name": "single_v7_bellhop_gap_ce02_ship5_noise1_s42",
+  "training_runs": 1,
+  "initialization": "fresh; no previous experiment checkpoint or statistics",
+  "seed": 42,
+  "epochs": 60,
+  "batch_size": 32,
+  "ships_per_class_per_epoch": 1800,
+  "noise_per_epoch": 1080,
+  "optimizer_steps_per_epoch": 203,
+  "optimizer_steps_total": 12180,
+  "selection": "best EMA Val single_emr",
+  "post_training_evaluation": "one best-EMA pass over full Train and full Val",
+  "test_loaded": false
+}
