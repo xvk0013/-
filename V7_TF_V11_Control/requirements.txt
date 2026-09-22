@@ -1,7 +1,0 @@
-# Keep the existing matching CUDA builds of torch and torchaudio.
-# Portable backend does not require timm, einops or mamba-ssm.
-numpy>=1.24
-scipy>=1.10
-soundfile>=0.12
-torch>=2.3
-torchaudio>=2.3
